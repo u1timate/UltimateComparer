@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B2C55C517CF60D10026A711 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2C55C417CF60D10026A711 /* Cocoa.framework */; };
+		3B2C55CF17CF60D10026A711 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B2C55CD17CF60D10026A711 /* InfoPlist.strings */; };
+		3B2C55D117CF60D10026A711 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2C55D017CF60D10026A711 /* main.m */; };
+		3B2C55D517CF60D10026A711 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3B2C55D317CF60D10026A711 /* Credits.rtf */; };
+		3B2C55D817CF60D10026A711 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2C55D717CF60D10026A711 /* Document.m */; };
+		3B2C55DB17CF60D10026A711 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2C55D917CF60D10026A711 /* Document.xib */; };
+		3B2C55DE17CF60D10026A711 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2C55DC17CF60D10026A711 /* MainMenu.xib */; };
+		3B2C55E617CF63AE0026A711 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2C55E517CF63AE0026A711 /* AppController.m */; };
+		3B2C55EC17CF74930026A711 /* EncodingName.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2C55EB17CF74930026A711 /* EncodingName.m */; };
+		3B2C55F317CFA54A0026A711 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2C55C417CF60D10026A711 /* Cocoa.framework */; };
+		3B2C55F917CFA54A0026A711 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B2C55F717CFA54A0026A711 /* InfoPlist.strings */; };
+		3B2C55FD17CFA54A0026A711 /* NoodleLineNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2C55FC17CFA54A0026A711 /* NoodleLineNumber.m */; };
+		3B2C560517CFA57C0026A711 /* NoodleLineNumberMarker.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B2C560117CFA57C0026A711 /* NoodleLineNumberMarker.h */; };
+		3B2C560617CFA57C0026A711 /* NoodleLineNumberMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2C560217CFA57C0026A711 /* NoodleLineNumberMarker.m */; };
+		3B2C560717CFA57C0026A711 /* NoodleLineNumberView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B2C560317CFA57C0026A711 /* NoodleLineNumberView.h */; };
+		3B2C560817CFA57C0026A711 /* NoodleLineNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2C560417CFA57C0026A711 /* NoodleLineNumberView.m */; };
+		3B2C560A17CFA6150026A711 /* NoodleLineNumber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2C55F217CFA54A0026A711 /* NoodleLineNumber.framework */; };
+		3B6A7DDD17DD6D1C0067C931 /* NSMutableArray+MutArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A7DDC17DD6D1C0067C931 /* NSMutableArray+MutArray.m */; };
+		3BAD034117E2ECC700F33E06 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BAD034017E2ECC600F33E06 /* MainView.m */; };
+		3BBBDBD917D9C967009C80CC /* NSColor+MyColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBBDBD817D9C967009C80CC /* NSColor+MyColor.m */; };
+		3BCBBDE517D5B15000E34891 /* SynchroScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCBBDE417D5B15000E34891 /* SynchroScrollView.m */; };
+		3BCBBE2217D5E37200E34891 /* MarkerLine1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCBBE2117D5E37200E34891 /* MarkerLine1.m */; };
+		3BCBBE2517D5E3E900E34891 /* MarkerLine2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCBBE2417D5E3E900E34891 /* MarkerLine2.m */; };
+		3BE9B7EF17D71191005592E6 /* TextView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE9B7EE17D71191005592E6 /* TextView1.m */; };
+		3BE9B7F217D7119C005592E6 /* TextView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE9B7F117D7119C005592E6 /* TextView2.m */; };
+		3BE9B82417D82255005592E6 /* NSString+Strings.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE9B82317D82255005592E6 /* NSString+Strings.m */; };
+		3BE9B82B17D83197005592E6 /* NSTextView+TextMod.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE9B82A17D83197005592E6 /* NSTextView+TextMod.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3B2C55C117CF60D10026A711 /* UltimateComparer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimateComparer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B2C55C417CF60D10026A711 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		3B2C55C717CF60D10026A711 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		3B2C55C817CF60D10026A711 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3B2C55C917CF60D10026A711 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3B2C55CC17CF60D10026A711 /* UltimateComparer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UltimateComparer-Info.plist"; sourceTree = "<group>"; };
+		3B2C55CE17CF60D10026A711 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3B2C55D017CF60D10026A711 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3B2C55D217CF60D10026A711 /* UltimateComparer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UltimateComparer-Prefix.pch"; sourceTree = "<group>"; };
+		3B2C55D417CF60D10026A711 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		3B2C55D617CF60D10026A711 /* Document.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		3B2C55D717CF60D10026A711 /* Document.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		3B2C55DA17CF60D10026A711 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Document.xib; sourceTree = "<group>"; };
+		3B2C55DD17CF60D10026A711 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		3B2C55E417CF63AE0026A711 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		3B2C55E517CF63AE0026A711 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		3B2C55EA17CF74930026A711 /* EncodingName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncodingName.h; sourceTree = "<group>"; };
+		3B2C55EB17CF74930026A711 /* EncodingName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncodingName.m; sourceTree = "<group>"; };
+		3B2C55F217CFA54A0026A711 /* NoodleLineNumber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NoodleLineNumber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B2C55F617CFA54A0026A711 /* NoodleLineNumber-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NoodleLineNumber-Info.plist"; sourceTree = "<group>"; };
+		3B2C55F817CFA54A0026A711 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3B2C55FA17CFA54A0026A711 /* NoodleLineNumber-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NoodleLineNumber-Prefix.pch"; sourceTree = "<group>"; };
+		3B2C55FB17CFA54A0026A711 /* NoodleLineNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoodleLineNumber.h; sourceTree = "<group>"; };
+		3B2C55FC17CFA54A0026A711 /* NoodleLineNumber.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoodleLineNumber.m; sourceTree = "<group>"; };
+		3B2C560117CFA57C0026A711 /* NoodleLineNumberMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoodleLineNumberMarker.h; sourceTree = "<group>"; };
+		3B2C560217CFA57C0026A711 /* NoodleLineNumberMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoodleLineNumberMarker.m; sourceTree = "<group>"; };
+		3B2C560317CFA57C0026A711 /* NoodleLineNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoodleLineNumberView.h; sourceTree = "<group>"; };
+		3B2C560417CFA57C0026A711 /* NoodleLineNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoodleLineNumberView.m; sourceTree = "<group>"; };
+		3B6A7DDB17DD6D1C0067C931 /* NSMutableArray+MutArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+MutArray.h"; sourceTree = "<group>"; };
+		3B6A7DDC17DD6D1C0067C931 /* NSMutableArray+MutArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+MutArray.m"; sourceTree = "<group>"; };
+		3BAD033F17E2ECC600F33E06 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
+		3BAD034017E2ECC600F33E06 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
+		3BBBDBD717D9C967009C80CC /* NSColor+MyColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+MyColor.h"; sourceTree = "<group>"; };
+		3BBBDBD817D9C967009C80CC /* NSColor+MyColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+MyColor.m"; sourceTree = "<group>"; };
+		3BCBBDE317D5B15000E34891 /* SynchroScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynchroScrollView.h; sourceTree = "<group>"; };
+		3BCBBDE417D5B15000E34891 /* SynchroScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynchroScrollView.m; sourceTree = "<group>"; };
+		3BCBBE2017D5E37200E34891 /* MarkerLine1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkerLine1.h; sourceTree = "<group>"; };
+		3BCBBE2117D5E37200E34891 /* MarkerLine1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkerLine1.m; sourceTree = "<group>"; };
+		3BCBBE2317D5E3E900E34891 /* MarkerLine2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkerLine2.h; sourceTree = "<group>"; };
+		3BCBBE2417D5E3E900E34891 /* MarkerLine2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkerLine2.m; sourceTree = "<group>"; };
+		3BE9B7ED17D71191005592E6 /* TextView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextView1.h; sourceTree = "<group>"; };
+		3BE9B7EE17D71191005592E6 /* TextView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextView1.m; sourceTree = "<group>"; };
+		3BE9B7F017D7119C005592E6 /* TextView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextView2.h; sourceTree = "<group>"; };
+		3BE9B7F117D7119C005592E6 /* TextView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextView2.m; sourceTree = "<group>"; };
+		3BE9B82217D82255005592E6 /* NSString+Strings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Strings.h"; sourceTree = "<group>"; };
+		3BE9B82317D82255005592E6 /* NSString+Strings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Strings.m"; sourceTree = "<group>"; };
+		3BE9B82917D83197005592E6 /* NSTextView+TextMod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextView+TextMod.h"; sourceTree = "<group>"; };
+		3BE9B82A17D83197005592E6 /* NSTextView+TextMod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextView+TextMod.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B2C55BE17CF60D10026A711 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B2C560A17CFA6150026A711 /* NoodleLineNumber.framework in Frameworks */,
+				3B2C55C517CF60D10026A711 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B2C55EE17CFA54A0026A711 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B2C55F317CFA54A0026A711 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B2C55B817CF60D10026A711 = {
+			isa = PBXGroup;
+			children = (
+				3BFD5F3117D46E43004FFC02 /* Classes */,
+				3B2C55CA17CF60D10026A711 /* UltimateComparer */,
+				3B2C55F417CFA54A0026A711 /* NoodleLineNumber */,
+				3B2C55C317CF60D10026A711 /* Frameworks */,
+				3B2C55C217CF60D10026A711 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3B2C55C217CF60D10026A711 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B2C55C117CF60D10026A711 /* UltimateComparer.app */,
+				3B2C55F217CFA54A0026A711 /* NoodleLineNumber.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B2C55C317CF60D10026A711 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B2C55C417CF60D10026A711 /* Cocoa.framework */,
+				3B2C55C617CF60D10026A711 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3B2C55C617CF60D10026A711 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B2C55C717CF60D10026A711 /* AppKit.framework */,
+				3B2C55C817CF60D10026A711 /* CoreData.framework */,
+				3B2C55C917CF60D10026A711 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		3B2C55CA17CF60D10026A711 /* UltimateComparer */ = {
+			isa = PBXGroup;
+			children = (
+				3B2C55D917CF60D10026A711 /* Document.xib */,
+				3B2C55DC17CF60D10026A711 /* MainMenu.xib */,
+				3B2C55CB17CF60D10026A711 /* Supporting Files */,
+			);
+			path = UltimateComparer;
+			sourceTree = "<group>";
+		};
+		3B2C55CB17CF60D10026A711 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B2C55CC17CF60D10026A711 /* UltimateComparer-Info.plist */,
+				3B2C55CD17CF60D10026A711 /* InfoPlist.strings */,
+				3B2C55D017CF60D10026A711 /* main.m */,
+				3B2C55D217CF60D10026A711 /* UltimateComparer-Prefix.pch */,
+				3B2C55D317CF60D10026A711 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3B2C55F417CFA54A0026A711 /* NoodleLineNumber */ = {
+			isa = PBXGroup;
+			children = (
+				3B2C55FB17CFA54A0026A711 /* NoodleLineNumber.h */,
+				3B2C55FC17CFA54A0026A711 /* NoodleLineNumber.m */,
+				3B2C55F517CFA54A0026A711 /* Supporting Files */,
+			);
+			path = NoodleLineNumber;
+			sourceTree = "<group>";
+		};
+		3B2C55F517CFA54A0026A711 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B2C55F617CFA54A0026A711 /* NoodleLineNumber-Info.plist */,
+				3B2C55F717CFA54A0026A711 /* InfoPlist.strings */,
+				3B2C55FA17CFA54A0026A711 /* NoodleLineNumber-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3B2C560917CFA5830026A711 /* NoodleLineNumer */ = {
+			isa = PBXGroup;
+			children = (
+				3B2C560117CFA57C0026A711 /* NoodleLineNumberMarker.h */,
+				3B2C560217CFA57C0026A711 /* NoodleLineNumberMarker.m */,
+				3B2C560317CFA57C0026A711 /* NoodleLineNumberView.h */,
+				3B2C560417CFA57C0026A711 /* NoodleLineNumberView.m */,
+			);
+			name = NoodleLineNumer;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		3BE9B82517D8225B005592E6 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3BE9B82217D82255005592E6 /* NSString+Strings.h */,
+				3BE9B82317D82255005592E6 /* NSString+Strings.m */,
+				3BE9B82917D83197005592E6 /* NSTextView+TextMod.h */,
+				3BE9B82A17D83197005592E6 /* NSTextView+TextMod.m */,
+				3BBBDBD717D9C967009C80CC /* NSColor+MyColor.h */,
+				3BBBDBD817D9C967009C80CC /* NSColor+MyColor.m */,
+				3B6A7DDB17DD6D1C0067C931 /* NSMutableArray+MutArray.h */,
+				3B6A7DDC17DD6D1C0067C931 /* NSMutableArray+MutArray.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		3BFD5F3017D46E29004FFC02 /* TextViewStuff */ = {
+			isa = PBXGroup;
+			children = (
+				3BCBBDE317D5B15000E34891 /* SynchroScrollView.h */,
+				3BCBBDE417D5B15000E34891 /* SynchroScrollView.m */,
+				3BCBBE2017D5E37200E34891 /* MarkerLine1.h */,
+				3BCBBE2117D5E37200E34891 /* MarkerLine1.m */,
+				3BCBBE2317D5E3E900E34891 /* MarkerLine2.h */,
+				3BCBBE2417D5E3E900E34891 /* MarkerLine2.m */,
+				3BE9B7ED17D71191005592E6 /* TextView1.h */,
+				3BE9B7EE17D71191005592E6 /* TextView1.m */,
+				3BE9B7F017D7119C005592E6 /* TextView2.h */,
+				3BE9B7F117D7119C005592E6 /* TextView2.m */,
+			);
+			name = TextViewStuff;
+			sourceTree = "<group>";
+		};
+		3BFD5F3117D46E43004FFC02 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3BE9B82517D8225B005592E6 /* Categories */,
+				3B2C560917CFA5830026A711 /* NoodleLineNumer */,
+				3BFD5F3017D46E29004FFC02 /* TextViewStuff */,
+				3B2C55D617CF60D10026A711 /* Document.h */,
+				3B2C55D717CF60D10026A711 /* Document.m */,
+				3BAD033F17E2ECC600F33E06 /* MainView.h */,
+				3BAD034017E2ECC600F33E06 /* MainView.m */,
+				3B2C55E417CF63AE0026A711 /* AppController.h */,
+				3B2C55E517CF63AE0026A711 /* AppController.m */,
+				3B2C55EA17CF74930026A711 /* EncodingName.h */,
+				3B2C55EB17CF74930026A711 /* EncodingName.m */,
+			);
+			name = Classes;
+			path = UltimateComparer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3B2C55EF17CFA54A0026A711 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B2C560517CFA57C0026A711 /* NoodleLineNumberMarker.h in Headers */,
+				3B2C560717CFA57C0026A711 /* NoodleLineNumberView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3B2C55C017CF60D10026A711 /* UltimateComparer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B2C55E117CF60D10026A711 /* Build configuration list for PBXNativeTarget "UltimateComparer" */;
+			buildPhases = (
+				3B2C55BD17CF60D10026A711 /* Sources */,
+				3B2C55BE17CF60D10026A711 /* Frameworks */,
+				3B2C55BF17CF60D10026A711 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UltimateComparer;
+			productName = UltimateComparer;
+			productReference = 3B2C55C117CF60D10026A711 /* UltimateComparer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3B2C55F117CFA54A0026A711 /* NoodleLineNumber */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B2C55FE17CFA54A0026A711 /* Build configuration list for PBXNativeTarget "NoodleLineNumber" */;
+			buildPhases = (
+				3B2C55ED17CFA54A0026A711 /* Sources */,
+				3B2C55EE17CFA54A0026A711 /* Frameworks */,
+				3B2C55EF17CFA54A0026A711 /* Headers */,
+				3B2C55F017CFA54A0026A711 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NoodleLineNumber;
+			productName = NoodleLineNumber;
+			productReference = 3B2C55F217CFA54A0026A711 /* NoodleLineNumber.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3B2C55B917CF60D10026A711 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = free;
+			};
+			buildConfigurationList = 3B2C55BC17CF60D10026A711 /* Build configuration list for PBXProject "UltimateComparer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3B2C55B817CF60D10026A711;
+			productRefGroup = 3B2C55C217CF60D10026A711 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B2C55C017CF60D10026A711 /* UltimateComparer */,
+				3B2C55F117CFA54A0026A711 /* NoodleLineNumber */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3B2C55BF17CF60D10026A711 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B2C55CF17CF60D10026A711 /* InfoPlist.strings in Resources */,
+				3B2C55D517CF60D10026A711 /* Credits.rtf in Resources */,
+				3B2C55DB17CF60D10026A711 /* Document.xib in Resources */,
+				3B2C55DE17CF60D10026A711 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B2C55F017CFA54A0026A711 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B2C55F917CFA54A0026A711 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B2C55BD17CF60D10026A711 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B2C55D117CF60D10026A711 /* main.m in Sources */,
+				3B2C55D817CF60D10026A711 /* Document.m in Sources */,
+				3B2C55E617CF63AE0026A711 /* AppController.m in Sources */,
+				3B2C55EC17CF74930026A711 /* EncodingName.m in Sources */,
+				3BCBBDE517D5B15000E34891 /* SynchroScrollView.m in Sources */,
+				3BCBBE2217D5E37200E34891 /* MarkerLine1.m in Sources */,
+				3BCBBE2517D5E3E900E34891 /* MarkerLine2.m in Sources */,
+				3BE9B7EF17D71191005592E6 /* TextView1.m in Sources */,
+				3BE9B7F217D7119C005592E6 /* TextView2.m in Sources */,
+				3BE9B82417D82255005592E6 /* NSString+Strings.m in Sources */,
+				3BE9B82B17D83197005592E6 /* NSTextView+TextMod.m in Sources */,
+				3BBBDBD917D9C967009C80CC /* NSColor+MyColor.m in Sources */,
+				3B6A7DDD17DD6D1C0067C931 /* NSMutableArray+MutArray.m in Sources */,
+				3BAD034117E2ECC700F33E06 /* MainView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B2C55ED17CFA54A0026A711 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B2C55FD17CFA54A0026A711 /* NoodleLineNumber.m in Sources */,
+				3B2C560617CFA57C0026A711 /* NoodleLineNumberMarker.m in Sources */,
+				3B2C560817CFA57C0026A711 /* NoodleLineNumberView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3B2C55CD17CF60D10026A711 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B2C55CE17CF60D10026A711 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3B2C55D317CF60D10026A711 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B2C55D417CF60D10026A711 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		3B2C55D917CF60D10026A711 /* Document.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B2C55DA17CF60D10026A711 /* en */,
+			);
+			name = Document.xib;
+			sourceTree = "<group>";
+		};
+		3B2C55DC17CF60D10026A711 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B2C55DD17CF60D10026A711 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		3B2C55F717CFA54A0026A711 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B2C55F817CFA54A0026A711 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3B2C55DF17CF60D10026A711 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3B2C55E017CF60D10026A711 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3B2C55E217CF60D10026A711 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UltimateComparer/UltimateComparer-Prefix.pch";
+				INFOPLIST_FILE = "UltimateComparer/UltimateComparer-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3B2C55E317CF60D10026A711 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UltimateComparer/UltimateComparer-Prefix.pch";
+				INFOPLIST_FILE = "UltimateComparer/UltimateComparer-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3B2C55FF17CFA54A0026A711 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NoodleLineNumber/NoodleLineNumber-Prefix.pch";
+				INFOPLIST_FILE = "NoodleLineNumber/NoodleLineNumber-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		3B2C560017CFA54A0026A711 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NoodleLineNumber/NoodleLineNumber-Prefix.pch";
+				INFOPLIST_FILE = "NoodleLineNumber/NoodleLineNumber-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3B2C55BC17CF60D10026A711 /* Build configuration list for PBXProject "UltimateComparer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B2C55DF17CF60D10026A711 /* Debug */,
+				3B2C55E017CF60D10026A711 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B2C55E117CF60D10026A711 /* Build configuration list for PBXNativeTarget "UltimateComparer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B2C55E217CF60D10026A711 /* Debug */,
+				3B2C55E317CF60D10026A711 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B2C55FE17CFA54A0026A711 /* Build configuration list for PBXNativeTarget "NoodleLineNumber" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B2C55FF17CFA54A0026A711 /* Debug */,
+				3B2C560017CFA54A0026A711 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3B2C55B917CF60D10026A711 /* Project object */;
+}
