@@ -274,6 +274,7 @@
 				3B2C55BD17CF60D10026A711 /* Sources */,
 				3B2C55BE17CF60D10026A711 /* Frameworks */,
 				3B2C55BF17CF60D10026A711 /* Resources */,
+				3B83A8CC17E5547500F359FA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -350,6 +351,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B83A8CC17E5547500F359FA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3B2C55BD17CF60D10026A711 /* Sources */ = {

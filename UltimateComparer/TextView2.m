@@ -113,8 +113,10 @@ static NSMutableDictionary *myDiffRange;
     NSInteger er = NSMaxRange(r)-1;
     NSString *text = [self string];
     
+    NSRange attrRange;
+    attrRange = NSMakeRange(0, 0);
     NSAttributedString *attrStr = [self.attributedString attributedSubstringFromRange:aRange];
-    NSParagraphStyle *paraStyle = [attrStr attribute:NSParagraphStyleAttributeName atIndex:0 effectiveRange:NULL];
+    NSParagraphStyle *paraStyle = [attrStr attribute:NSParagraphStyleAttributeName atIndex:NSMaxRange(attrRange) effectiveRange:&attrRange];
     CGFloat paraSpacing = [paraStyle paragraphSpacing];
     
     if (er >= [text length]) {

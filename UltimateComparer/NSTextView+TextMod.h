@@ -18,4 +18,5 @@
 - (void)modLineHeightOfRange:(NSRange)modRange template:(NSRange)templateRange inTextView:(NSTextView *)textView;
 - (void)modLineHeightOfRange:(NSRange)modRange targetString:(NSString *)str;
 - (NSInteger)actualHeightOfString:(NSString *)str;
+- (NSRange)cursorRange;
 @end

@@ -161,94 +161,27 @@ enum {
 }
 
 - (void)textDidChange:(NSNotification *)notification {
-    if (!isInitialize && [[[notification object] textStorage] editedMask] == NSTextStorageEditedCharacters) {
+    if (!isInitialize) {
+        isInitialize = YES;
         if ([[notification object] isEqualTo:_textView1]) {
             NSLog(@"text1 changed");
-            
-            _indexes1 = [_textView1 indexOfEachLineNum];
-            NSInteger cursorLoc = [_textView1 lineNumOfCursor];
-            NSRange editedRange = NSMakeRange([[_indexes1 objectAtIndex:cursorLoc] longValue], [[_indexes1 objectAtIndex:cursorLoc+1] longValue] - [[_indexes1 objectAtIndex:cursorLoc] longValue]);
-            NSRange otherViewRange = NSMakeRange([[_indexes2 objectAtIndex:cursorLoc] longValue], [[_indexes2 objectAtIndex:cursorLoc+1] longValue] - [[_indexes2 objectAtIndex:cursorLoc] longValue]);
-            
-            
-            NSString *subStr1 = [_textView1.string substringWithRange:editedRange];
-            NSString *subStr2 = [_textView2.string substringWithRange:otherViewRange];
-            if ([subStr1 isEqualToString:subStr2]) {
-                id key = [NSNumber numberWithInteger:cursorLoc];
-                [diffRange1 removeObjectForKey:key];
-                [diffRange2 removeObjectForKey:key];
-                
-            } else if (subStr1.length > subStr2.length) {
-                [_textView2 modLineHeightOfRange:otherViewRange template:editedRange inTextView:_textView1];
-            } else if (subStr1.length < subStr2.length) {
-                [_textView1 modLineHeightOfRange:editedRange template:otherViewRange inTextView:_textView2];
-            }
+            NSRange cursor = [_textView1 cursorRange];
+            [self setDiffColor];
+            [_textView1 setSelectedRange:cursor];
+            [_textView2 setNeedsDisplay:YES];
+            [_textView1 setNeedsDisplay:YES];
         } else if ([[notification object] isEqualTo:_textView2]) {
             NSLog(@"text2 changed");
-            
-            _indexes2 = [_textView2 indexOfEachLineNum];
-            NSInteger cursorLoc = [_textView2 lineNumOfCursor];
-            NSRange editedRange = NSMakeRange([[_indexes2 objectAtIndex:cursorLoc] longValue], [[_indexes2 objectAtIndex:cursorLoc+1] longValue] - [[_indexes2 objectAtIndex:cursorLoc] longValue]);
-            NSRange otherViewRange = NSMakeRange([[_indexes1 objectAtIndex:cursorLoc] longValue], [[_indexes1 objectAtIndex:cursorLoc+1] longValue] - [[_indexes1 objectAtIndex:cursorLoc] longValue]);
-            
-            NSString *subStr1 = [_textView1.string substringWithRange:otherViewRange];
-            NSString *subStr2 = [_textView2.string substringWithRange:editedRange];
-            if ([subStr1 isEqualToString:subStr2]) {
-                id key = [NSNumber numberWithInteger:cursorLoc];
-                [diffRange1 removeObjectForKey:key];
-                [diffRange2 removeObjectForKey:key];
-            } else if (subStr1.length > subStr2.length) {
-                [_textView2 modLineHeightOfRange:otherViewRange template:editedRange inTextView:_textView1];
-            } else if (subStr1.length < subStr2.length) {
-                [_textView1 modLineHeightOfRange:editedRange template:otherViewRange inTextView:_textView2];
-            }
+            NSRange cursor = [_textView2 cursorRange];
+            [self setDiffColor];
+            [_textView2 setSelectedRange:cursor];
+            [_textView2 setNeedsDisplay:YES];
+            [_textView1 setNeedsDisplay:YES];
         } else {
             NSLog(@"%@ changed", [notification object]);
         }
+        isInitialize = NO;
     }
-}
-
-- (void)modLineHeightInRange:(NSRange)range in:(NSTextView *)textView1 like:(NSTextView *)textView2 {
-    
-    NSString *subStr1 = [textView1.string substringWithRange:range];
-    NSString *subStr2 = [textView2.string substringWithRange:range];
-    
-    if (subStr1.length < subStr2.length) {
-        [_textView1 modLineHeightOfRange:range template:range inTextView:_textView2];
-    } else if (subStr1.length > subStr2.length) {
-        [_textView2 modLineHeightOfRange:range template:range inTextView:_textView1];
-    }
-    
-}
-
-- (void)compareLine1:(NSInteger)row1 inTextView:(NSTextView *)textView1 withLine2:(NSInteger)row2 inTextView2:(NSTextView *)textView2 {
-    NSRange r1; NSRange r2;
-
-    if ([textView1 isEqualTo:_textView1]) {
-        r1 = NSMakeRange([[_indexes1 objectAtIndex:row1 - 1] longValue], [[_indexes1 objectAtIndex:row1] longValue] - [[_indexes1 objectAtIndex:row1 - 1] longValue]);
-        r2 = NSMakeRange([[_indexes2 objectAtIndex:row2 - 1] longValue], [[_indexes2 objectAtIndex:row2] longValue] - [[_indexes2 objectAtIndex:row2 - 1] longValue]);
-    } else {
-        r1 = NSMakeRange([[_indexes2 objectAtIndex:row1 - 1] longValue], [[_indexes2 objectAtIndex:row1] longValue] - [[_indexes2 objectAtIndex:row1 - 1] longValue]);
-        r2 = NSMakeRange([[_indexes1 objectAtIndex:row2 - 1] longValue], [[_indexes1 objectAtIndex:row2] longValue] - [[_indexes1 objectAtIndex:row2 - 1] longValue]);
-    }
-    
-    NSString *subStr1 = [textView1.string substringWithRange:r1];
-    NSString *subStr2 = [textView2.string substringWithRange:r2];
-    
-    if (![subStr1 isEqualToString:subStr2]) {
-        
-        id key = [NSNumber numberWithInteger:[textView1 lineNumOfCursor]];
-        
-        [diffRange1 setObject:[NSValue valueWithRange:r1] forKey:key];
-        [diffRange2 setObject:[NSValue valueWithRange:r2] forKey:key];
-    } else {
-        
-        id key = [NSNumber numberWithInteger:[textView1 lineNumOfCursor]];
-        
-        [diffRange1 removeObjectForKey:key];
-        [diffRange2 removeObjectForKey:key];
-    }
-    
 }
 
 - (void)afterGetFilePath:(NSString *)file forArea:(int)area {
@@ -732,15 +665,19 @@ enum {
     [_textViewSmall1 setString:_file1Str];
     [_textViewSmall2 setString:_file2Str];
 
+    [self setDiffColor];
+    
+    isInitialize = NO;
+    
+}
+
+- (void)setDiffColor {
     _indexes1 = [[NSArray alloc] initWithArray:[_textView1 indexOfEachLineNum]];
     _indexes2 = [[NSArray alloc] initWithArray:[_textView2 indexOfEachLineNum]];
-    _file1Array = [[NSMutableArray alloc] initWithArray:[_file1Str componentsSeparatedByString:@"\n"]];
-    _file2Array = [[NSMutableArray alloc] initWithArray:[_file2Str componentsSeparatedByString:@"\n"]];
-    
+    _file1Array = [[NSMutableArray alloc] initWithArray:[_textView1.string componentsSeparatedByString:@"\n"]];
+    _file2Array = [[NSMutableArray alloc] initWithArray:[_textView2.string componentsSeparatedByString:@"\n"]];
     diffRange1 = [[NSMutableDictionary alloc] init];
     diffRange2 = [[NSMutableDictionary alloc] init];
-    
-    
     if (_file1Array.count == _file2Array.count) {
         for (long i = 1; i < _file1Array.count; i++) {
             NSRange range1 = NSMakeRange([_indexes1[i-1] longValue], [_indexes1[i] longValue] - [_indexes1[i-1] longValue]);
@@ -751,7 +688,7 @@ enum {
             
             id key = [NSNumber numberWithLong:i-1];
             
-            if ([subStr1 percentageOfSimilarityTo:subStr2] <= 0.4) {
+            if (![subStr1 isEqualToString:subStr2]) {
                 [diffRange1 setObject:[NSValue valueWithRange:range1] forKey:key];
                 [diffRange2 setObject:[NSValue valueWithRange:range2] forKey:key];
             }
@@ -761,16 +698,11 @@ enum {
             } else if (subStr1.length > subStr2.length) {
                 [_textView2 modLineHeightOfRange:range2 template:range1 inTextView:_textView1];
             }
-            
         }
     } else {
         NSLog(@"Error Array Counting");
     }
-    
-    isInitialize = NO;
-    
 }
-
 
 - (void)insertText:(id)text atIndex:(NSInteger)ind ofTextView:(NSTextView *)textView {
 
@@ -910,7 +842,7 @@ enum {
         *outError = [NSError errorWithDomain:NSOSStatusErrorDomain code:unimpErr userInfo:NULL];
     }
     
-    _diffArray = [[NSMutableArray alloc] initWithObjects:@{@"file1": _textView1.string, @"file2": _textView2.string}, nil];
+    _diffArray = [[NSMutableArray alloc] initWithObjects:@{@"file1": _textView1.textStorage.mutableString.copy, @"file2": _textView2.textStorage.mutableString.copy}, nil];
     
     if (_path1 != nil && _path2 != nil && _date1 != nil && _date2 != nil && _size1 != nil && _size2 != nil && _line1 != 0 && _line2 != 0) {
         [_diffArray addObject:@{@"path1": _path1, @"path2": _path2}];
@@ -964,6 +896,17 @@ enum {
     [_labelFilePath2 setStringValue:_path2];
     [_labelFileAttr1 setStringValue:[NSString stringWithFormat:@"%@   %@   %lld lines", _date1, _size1, _line1]];
     [_labelFileAttr2 setStringValue:[NSString stringWithFormat:@"%@   %@   %lld lines", _date2, _size2, _line2]];
+    
+    [_textView1 setString:_file1Str];
+    [_textView2 setString:_file2Str];
+    
+    [_textViewSmall1 setFont:[self fontSizedForAreaSize:_textViewSmall1.bounds.size withString:_file1Str usingFont:[NSFont systemFontOfSize:13]]];
+    [_textViewSmall2 setFont:[self fontSizedForAreaSize:_textViewSmall2.bounds.size withString:_file2Str usingFont:[NSFont systemFontOfSize:13]]];
+    
+    [_textViewSmall1 setString:_file1Str];
+    [_textViewSmall2 setString:_file2Str];
+    
+    [self setDiffColor];
     
     isInitialize = NO;
 }

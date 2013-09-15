@@ -83,6 +83,7 @@
     
     [self setSelectedRange:modRange];
     [self insertText:modedStrings];
+    [self setSelectedRange:NSMakeRange(modRange.location + modRange.length - 1, 0)];
 }
 
 - (void)modLineHeightOfRange:(NSRange)modRange targetString:(NSString *)str {
@@ -102,12 +103,16 @@
     
     [self setSelectedRange:modRange];
     [self insertText:modedStrings];
-    
+    [self setSelectedRange:NSMakeRange(modRange.location + modRange.length - 1, 0)];
 }
 
 - (NSInteger)actualHeightOfString:(NSString *)str {
     NSRect rect = [str boundingRectWithSize:self.bounds.size options:NSStringDrawingUsesLineFragmentOrigin attributes:nil];
     return rect.size.height/15;
+}
+
+- (NSRange)cursorRange {
+    return NSMakeRange(self.selectedRange.location, 0);
 }
 
 @end
